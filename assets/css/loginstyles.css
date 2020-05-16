@@ -1,0 +1,21 @@
+body{
+    background-image: url("https://www.humanitas.net/content/uploads/2017/10/medical-care.jpg");;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  
+  
+  
+  }
+  
+  form{
+      background-color: rgba(238, 238, 238, 0.788);
+      padding: 20px 15px;
+      border: 5px solid rgb(26, 116, 168);
+      border-radius: 20px;
+  }
+
+#linkedin {
+    float: right;
+}

@@ -1,0 +1,80 @@
+
+  <div class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+  <h4 style="color: #fff;">Add New Laboratory Test</h4>
+</div>
+</div>
+        <div class="test-info">
+        
+        <form action="addtest.php" method="POST" class="add-test-form">
+
+
+            <br>
+
+
+            <label for="test_name">Test Name: </label>
+            <input type="text" class="form-control" name="test_name" class="" placeholder="Test Name" value="<?php 
+            if(isset($_SESSION['test_name'])) {
+                echo $_SESSION['test_name'];
+            } ?>" >
+
+            <?php if(in_array("The Test name must be between 2 and 40 characters<br>", $error_array)) echo "The Test name must be between 2 and 40 characters<br>"; ?>
+
+            
+            <label for="sample_type">Sample Type: </label>
+            <input type="text" class="form-control" name="sample_type"  placeholder="Sample Type" value="<?php 
+            if(isset($_SESSION['sample_type'])) {
+                echo $_SESSION['sample_type'];
+            } ?>" >
+
+            
+
+            <label for="ref_low">Refernce Low: </label>
+            <input type="text" class="form-control" name="ref_low" placeholder="Refernce Low" value="<?php 
+            if(isset($_SESSION['ref_low'])) {
+                echo $_SESSION['ref_low'];
+            } ?>">
+
+            
+
+            <label for="ref_high">Refernce High: </label>
+            <input type="text" class="form-control" name="ref_high" placeholder="Refernce High" value="<?php 
+            if(isset($_SESSION['ref_high'])) {
+                echo $_SESSION['ref_high'];
+            } ?>">
+
+            
+
+            <label for="critical_low">Critical Low: </label>
+            <input type="text" class="form-control" name="critical_low" placeholder="Critical Low" value="<?php 
+            if(isset($_SESSION['critical_low'])) {
+                echo $_SESSION['critical_low'];
+            } ?>">
+
+            
+
+            <label for="critical_high">Critical High: </label>
+            <input type="text" class="form-control" name="critical_high" placeholder="Critical High" value="<?php 
+            if(isset($_SESSION['critical_high'])) {
+                echo $_SESSION['critical_high'];
+            } ?>">
+
+            
+
+            <label for="test_unit">Test Unit: </label>
+            <input type="text" class="form-control" name="test_unit" placeholder="Test Unit" value="<?php 
+            if(isset($_SESSION['test_unit'])) {
+                echo $_SESSION['test_unit'];
+            } ?>">
+
+            
+          <br>
+
+          <label for="addtest"></label>
+          <input type="submit" class="btn btn-primary btn-lg" name="addtest" value="Add">
+
+      </div>
+    </div>
+</div>
+  </body>
+</html>

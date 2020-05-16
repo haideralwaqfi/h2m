@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: 'Josefin Sans', sans-serif;
+  text-decoration: none;
+}
+
+body{
+   background-color: #f3f5f9;
+}
+
+.wrapper{
+  display: flex;
+  position: relative;
+}
+
+.wrapper .sidebar{
+  width: 200px;
+  height: 100%;
+  background: #000000;
+  padding: 30px 0px;
+  position: fixed;
+  z-index: 100;
+}
+
+.wrapper .sidebar h2{
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.input-group-append {
+  z-index: 0;
+}
+
+.wrapper .sidebar ul li{
+  padding: 15px;
+  border-bottom: 1px solid #bdb8d7;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  border-top: 1px solid rgba(255,255,255,0.05);
+}    
+
+.wrapper .sidebar ul li a{
+  color: #bdb8d7;
+  display: block;
+}
+
+.wrapper .sidebar ul li a:hover{
+  text-decoration: none;
+}
+
+label{
+  position: relative;
+  padding: 10px;
+}
+
+.wrapper .sidebar ul li a .fas{
+  width: 25px;
+}
+
+.wrapper .sidebar ul li:hover{
+  background-color: #860218;
+}
+    
+.wrapper .sidebar ul li:hover a{
+  color: #fff;
+}
+ 
+.wrapper .sidebar .social_media{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+}
+
+.wrapper .sidebar .social_media a{
+  display: block;
+  width: 40px;
+  background: #594f8d;
+  height: 40px;
+  line-height: 45px;
+  text-align: center;
+  margin: 0 5px;
+  color: #bdb8d7;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.wrapper .main_content{
+  width: 100%;
+  margin-left: 200px;
+}
+
+.wrapper .main_content .header{
+  padding: 20px;
+  color: #717171;
+  border-bottom: 1px solid #e0e4e8;
+}
+
+.add-donor-form {
+  width: 300px;
+  margin-left: 100px;
+}
+
+.add-patient-form {
+  width: 300px;
+  margin-left: 100px;
+}
+
+
+hr{
+  height: 12px;
+  border: 0;
+  box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
+ 
+  
+}
+
+.container{
+color: #000000;
+margin: 50px;
+
+}
+
+.wrapper .sidebar ul li:hover{
+  background-color: #860218;
+}
+
+#donor-table {
+  padding: 0;
+}
+
+.btn-copy {
+  margin-left: 2px;
+
+}
+
+.mumps td{
+  border:1px solid #000;
+  padding: 3px;
+}
+
+.add-test-form input[type="text"] {
+  width: 250px;
+  margin: 10px;
+  
+}
+
+.sidebar p {
+  color: #e0e4e8;
+} 
+
+
+
+/* -------------------------------------*/
+
+
+.info {
+	position:relative;
+	max-width:1300px;
+	margin:left;
+	overflow:hidden;
+  border:2px solid blue;
+  border-radius: 3px;
+  z-index: 3;
+  left: 6px;
+  bottom: 6px;
+  
+}
+.table-wrap {
+	width:100%;
+	overflow:auto;
+}
+.info table tr:nth-child(even){
+	width:100%;
+	margin:auto;
+	border-collapse:separate;
+  border-spacing:0;
+  background-color: #91b9d4;
+}
+.info th {
+	padding:5px 10px;
+	border:1px solid #000;
+	white-space:nowrap;
+  vertical-align:top;
+  background-color: yellow;
+}
+.info td {
+	padding:5px 10px;
+	border:1px solid #000;
+	white-space:nowrap;
+  vertical-align:top;
+}
+.clone {
+	position:absolute;
+	top:0;
+	left:0;
+	pointer-events:none;
+}
+.clone th, .clone td {
+	visibility:hidden
+}
+.clone td, .clone th {
+	border-color:transparent
+}
+.clone tbody th {
+	visibility:visible;
+	
+}
+.clone .fixed-side {
+	border:1px solid #000;
+	background:yellow;
+	visibility:visible;
+}
+
+
+.clone thead, .clone tfoot{background:transparent;}
+
+
+
+
+

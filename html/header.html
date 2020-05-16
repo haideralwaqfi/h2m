@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>H2M</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+    
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="sidebar">
+        <h2>H2M Tool</h2>
+        <p>Developed and Designed By : <a href="https://www.linkedin.com/in/haider-al-waqfi-pmp%C2%AE-76149480/" target="_blank">Haider Alwaqfi</a></p>
+        <ul style="position: relative;z-index: 2;">
+          <li>
+            <a href="testlist.php"><i class="fas fa-list"></i>Test List</a>
+          </li>
+          <li>
+            <a href="addtest.php"
+              ><i class="fas fa-microscope"></i>Add Test</a
+            >
+          </li>
+          <li>
+            <a href="rangeconf.php"
+              ><i class="fab fa-stack-exchange"></i> Refe. Range Config.</a
+            >
+          </li>
+          <li>
+            <a href="logout.php"
+              ><i class="fas fa-sign-out-alt"></i>Log out</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <div class="main_content">
+        <div class="header"><h5> are logged as: <?php echo $userLoggedin ?>. </h5> <br></div>
+

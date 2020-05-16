@@ -1,0 +1,201 @@
+<div style="width: 500px;">
+  <form class="form-horizontal" action="rangeconf.php" method="POST">
+      <div class="form-group">
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" name="test_name" placeholder="Test Name" aria-label="Recipient's username" aria-describedby="button-addon2">
+              <div class="input-group-append">
+                <button class="btn btn-primary" type="submit" name="search" id="button-addon2">Search</button>
+              </div>
+            </div>                  
+        </div>                                    
+   </form>
+</div>
+
+<div>
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item"><a class="nav-link active" id="referencelow-tab" data-toggle="tab"href="#referencelow" role="tab" aria-controls="referencelow" aria-selected="true">Reference Range Low</a></li>
+      <li class="nav-item"><a class="nav-link" id="referencehigh-tab" data-toggle="tab" href="#referencehigh" role="tab" aria-controls="referencehigh" aria-selected="false">Reference Range High</a></li>
+      <li class="nav-item"><a class="nav-link" id="criticallow-tab" data-toggle="tab" href="#criticallow" role="tab" aria-controls="criticallow" aria-selected="false">Critical Low</a></li>
+      <li class="nav-item"><a class="nav-link" id="criticalhigh-tab" data-toggle="tab" href="#criticalhigh" role="tab" aria-controls="criticalhigh" aria-selected="false">Critical High</a></li>
+    </ul>
+</div>
+
+<div id="test-form-1"></div>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="referencelow" role="tabpanel" aria-labelledby="profile-tab"  >
+    <br />
+  <div class="container">
+   <h4 align="center">Reference Low Configuration</h4>
+   <br />
+   <div class="header"><h5> The Slected Test:  <?php echo $test_name ?>. </h5> <br></div>
+   <form method="post" id="insert_formrl">
+    <div class="table-repsonsive" id="table-repsonsive">
+     <span id="errorrl"></span>
+     <table class="table table-bordered" id="item_tablerl">
+      <tr>
+        <th>Test Name</th>
+        <th>Gender</th>
+        <th>Equal or greater than</th>
+        <th>Age in</th>
+        <th>Less than</th>
+        <th>Age in</th>
+        <th>Equal</th>
+       <th><button type="button" id="addbtn" name="add" class="btn btn-success btn-sm addrl"><i class="fas fa-plus"></i></button></th>
+      </tr>
+     </table>
+     <div align="center">
+      <input type="submit" name="submit" class="btn btn-info" value="Insert" />
+     </div>
+     <br>
+
+     <table class="mumps">
+       <tr>
+         <td><button class='btn btn-info btn-copy'>Copy</button></td>
+         <td id="mumpsrl"></td>
+       </tr>
+     </table>
+     
+    </div>
+   </form>
+  </div>
+  </div>
+
+  <div class="tab-pane fade" id="referencehigh" role="tabpanel" aria-labelledby="profile-tab"  >
+      <br />
+    <div class="container">
+     <h4 align="center">Reference High Configuration</h4>
+     <br />
+     <div class="header"><h5> The Slected Test:  <?php echo $test_name ?>. </h5> <br></div>
+     <form method="post" id="insert_formrh">
+      <div class="table-repsonsive">
+       <span id="errorrh"></span>
+       <table class="table table-bordered" id="item_tablerh">
+        <tr>
+          <th>Test Name</th>
+          <th>Gender</th>
+          <th>Equal or greater than</th>
+          <th>Age in</th>
+          <th>Less than</th>
+          <th>Age in</th>
+          <th>Equal</th>
+         <th><button type="button" id="addbtn" name="add" class="btn btn-success btn-sm addrh"><i class="fas fa-plus"></i></button></th>
+        </tr>
+       </table>
+       <div align="center">
+        <input type="submit" name="submit" class="btn btn-info" value="Insert" />
+       </div>
+       <br>
+       <table>
+        <tr class="mumps">
+          <td><button class='btn btn-info btn-copy'>Copy</button></td>
+          <td id="mumpsrh"></td>
+        </tr>
+      </table>
+      </div>
+     </form>
+    </div>
+    </div>
+  
+    <div class="tab-pane fade" id="criticallow" role="tabpanel" aria-labelledby="profile-tab"  >
+        <br />
+      <div class="container">
+       <h4 align="center">Critical Low Configuration</h4>
+       <br />
+       <div class="header"><h5> The Slected Test:  <?php echo $test_name ?>. </h5> <br></div>
+       <form method="post" id="insert_formcl">
+        <div class="table-repsonsive">
+         <span id="errorcl"></span>
+         <table class="table table-bordered" id="item_tablecl">
+          <tr>
+            <th>Test Name</th>
+            <th>Gender</th>
+            <th>Equal or greater than</th>
+            <th>Age in</th>
+            <th>Less than</th>
+            <th>Age in</th>
+            <th>Equal</th>
+           <th><button type="button" id="addbtn" name="add" class="btn btn-success btn-sm addcl"><i class="fas fa-plus"></i></button></th>
+          </tr>
+         </table>
+         <div align="center">
+          <input type="submit" name="submit" class="btn btn-info" value="Insert" />
+         </div>
+         <br>
+         <table class="mumps">
+          <tr>
+            <td><button class='btn btn-info btn-copy'>Copy</button></td>
+            <td id="mumpscl"></td>
+          </tr>
+        </table>
+        </div>
+       </form>
+      </div>
+      </div>
+
+
+      <div class="tab-pane fade" id="criticalhigh" role="tabpanel" aria-labelledby="profile-tab"  >
+          <br />
+        <div class="container">
+         <h4 align="center">Critical High Configuration</h4>
+         <br />
+         <div class="header"><h5> The Slected Test:  <?php echo $test_name ?>. </h5> <br></div>
+         <form method="post" id="insert_formch">
+          <div class="table-repsonsive">
+           <span id="errorch"></span>
+           <table class="table table-bordered" id="item_tablech">
+            <tr>
+              <th>Test Name</th>
+              <th>Gender</th>
+              <th>Equal or greater than</th>
+              <th>Age in</th>
+              <th>Less than</th>
+              <th>Age in</th>
+              <th>Equal</th>
+             <th><button type="button" id="addbtn" name="add" class="btn btn-success btn-sm addch"><i class="fas fa-plus"></i></button></th>
+            </tr>
+           </table>
+           <div align="center">
+            <input type="submit" name="submit" class="btn btn-info" value="Insert" />
+           </div>
+           <br>
+           <table class="mumps">
+            <tr>
+              <td><button class='btn btn-info btn-copy'>Copy</button></td>
+              <td id="mumpsch"></td>
+            </tr>
+          </table>
+           
+          </div>
+         </form>
+        </div>
+        </div>
+      </div>
+
+<script>
+
+    // requires jquery library
+$(document).ready(function() {
+   $(".main-table").clone(true).appendTo('#info').addClass('clone');
+   $('.btn-copy').on('click', function(){
+      element = $(this).closest('td').next('td')[0];
+      var selection = window.getSelection();        
+      var range = document.createRange();
+      range.selectNodeContents(element);
+      selection.removeAllRanges();
+      selection.addRange(range);
+      //Losely basd on http://stackoverflow.com/a/40734974/7668911
+        try {
+          var successful = document.execCommand('copy');
+          if(successful) {
+            $('.res').html("Coppied");
+          }
+          else
+          { $('.res').html("Unable to copy!");} 
+      } catch (err) {
+          $('.res').html(err);
+      }
+    });   
+});
+
+</script>
