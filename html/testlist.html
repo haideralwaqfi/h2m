@@ -159,7 +159,7 @@ $(document).ready(function() {
   });
 
 $(document).ready(function(){
-// code to read selected table row cell data (values).
+// Refe Low
 $("#test-table").on('click','.ref_low_m',function(){
   
      var currentRow=$(this).closest("tr"); 
@@ -195,9 +195,132 @@ for (const [key, value] of Object.entries(data)) {
 }
     
     var data =data.join(" ");
-     alert("Test Name: "+ test_name + "\n" +data);
+     alert("Reference Low" +"\n" + "Test Name: "+ test_name + "\n" +data);
      
      
+});
+
+//Refe High
+$("#test-table").on('click','.ref_high_m',function(){
+  
+  var currentRow=$(this).closest("tr"); 
+  var test_name=currentRow.find("th:eq(0)").text();
+  var data=currentRow.find("td:eq(6)").text(); 
+
+  var data = data.replace(/AGE/g, "");
+  var data = data.replace(/,/g, "\n");
+  var data = data.replace(/\(/g, "");
+  var data = data.replace(/\$S/g, "");
+  var data = data.replace(/\)/g, "");
+  var data = data.replace(/'</g, ">= ");
+  var data = data.replace(/</g, "< ");
+  var data = data.replace(/&/g, " ");
+  var data = data.replace(/SEX="M"/g, "Male");
+  var data = data.replace(/SEX="F"/g, "Female");
+  var data = data.replace(/:/g, " =");
+
+  var data = data.split(" ");
+
+for (const [key, value] of Object.entries(data)) {
+// console.log(key, value);
+if(value < 1){
+ parseFloat(value)
+ value1= value * 365;
+ value1= Math.round(value1);
+ if(value1 == 1){value1 = value1 + " Day"}
+ else if(value1 > 1 && value1 < 30){value1 = value1 + " Days"}
+ else if(value1 >= 30){value1 = value1/30;if(value1 == 1){value1 = value1 + " Month"}else{value1 = value1 + " Months"}}
+   
+ data[key] = value1;
+ }else if(value > 1){value1 = value + " Years"; data[key] = value1;}else if(value == 1){value1 = value + " Year"; data[key] = value1;}
+}
+ 
+ var data =data.join(" ");
+  alert("Reference High" +"\n" + "Test Name: "+ test_name + "\n" +data);
+  
+  
+});
+
+// Critical Low
+$("#test-table").on('click','.critical_low_m',function(){
+  
+  var currentRow=$(this).closest("tr"); 
+  var test_name=currentRow.find("th:eq(0)").text();
+  var data=currentRow.find("td:eq(10)").text(); 
+
+  var data = data.replace(/AGE/g, "");
+  var data = data.replace(/,/g, "\n");
+  var data = data.replace(/\(/g, "");
+  var data = data.replace(/\$S/g, "");
+  var data = data.replace(/\)/g, "");
+  var data = data.replace(/'</g, ">= ");
+  var data = data.replace(/</g, "< ");
+  var data = data.replace(/&/g, " ");
+  var data = data.replace(/SEX="M"/g, "Male");
+  var data = data.replace(/SEX="F"/g, "Female");
+  var data = data.replace(/:/g, " =");
+
+  var data = data.split(" ");
+
+for (const [key, value] of Object.entries(data)) {
+// console.log(key, value);
+if(value < 1){
+ parseFloat(value)
+ value1= value * 365;
+ value1= Math.round(value1);
+ if(value1 == 1){value1 = value1 + " Day"}
+ else if(value1 > 1 && value1 < 30){value1 = value1 + " Days"}
+ else if(value1 >= 30){value1 = value1/30;if(value1 == 1){value1 = value1 + " Month"}else{value1 = value1 + " Months"}}
+   
+ data[key] = value1;
+ }else if(value > 1){value1 = value + " Years"; data[key] = value1;}else if(value == 1){value1 = value + " Year"; data[key] = value1;}
+}
+ 
+ var data =data.join(" ");
+  alert("Critical Low" +"\n" + "Test Name: "+ test_name + "\n" +data);
+  
+  
+});
+
+// Critical High
+$("#test-table").on('click','.critical_high_m',function(){
+  
+  var currentRow=$(this).closest("tr"); 
+  var test_name=currentRow.find("th:eq(0)").text();
+  var data=currentRow.find("td:eq(12)").text(); 
+
+  var data = data.replace(/AGE/g, "");
+  var data = data.replace(/,/g, "\n");
+  var data = data.replace(/\(/g, "");
+  var data = data.replace(/\$S/g, "");
+  var data = data.replace(/\)/g, "");
+  var data = data.replace(/'</g, ">= ");
+  var data = data.replace(/</g, "< ");
+  var data = data.replace(/&/g, " ");
+  var data = data.replace(/SEX="M"/g, "Male");
+  var data = data.replace(/SEX="F"/g, "Female");
+  var data = data.replace(/:/g, " =");
+
+  var data = data.split(" ");
+
+for (const [key, value] of Object.entries(data)) {
+// console.log(key, value);
+if(value < 1){
+ parseFloat(value)
+ value1= value * 365;
+ value1= Math.round(value1);
+ if(value1 == 1){value1 = value1 + " Day"}
+ else if(value1 > 1 && value1 < 30){value1 = value1 + " Days"}
+ else if(value1 >= 30){value1 = value1/30;if(value1 == 1){value1 = value1 + " Month"}else{value1 = value1 + " Months"}}
+   
+ data[key] = value1;
+ }else if(value > 1){value1 = value + " Years"; data[key] = value1;}else if(value == 1){value1 = value + " Year"; data[key] = value1;}
+}
+ 
+ var data =data.join(" ");
+  alert("Critical High" +"\n" + "Test Name: "+ test_name + "\n" +data);
+  
+  
 });
 });
 
