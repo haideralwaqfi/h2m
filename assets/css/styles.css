@@ -137,8 +137,9 @@ margin: 50px;
   padding: 0;
 }
 
-.btn-copy {
-  margin-left: 2px;
+.btn-copy, .enter {
+  margin: 2px;
+  width: 60px;
 
 }
 
@@ -166,12 +167,12 @@ margin: 50px;
 	position:relative;
 	max-width:1300px;
 	margin:left;
-	overflow:hidden;
-  border:2px solid blue;
+	overflow-x: hidden;
+  /* border:2px solid blue; */
   border-radius: 3px;
-  z-index: 3;
   left: 6px;
-  bottom: 6px;
+  /* bottom: 6px; */
+  height: 500px;
   
 }
 .table-wrap {
@@ -195,7 +196,7 @@ margin: 50px;
 .info td {
 	padding:5px 10px;
 	border:1px solid #000;
-	white-space:nowrap;
+	/* white-space:nowrap; */
   vertical-align:top;
 }
 .clone {
@@ -222,8 +223,3 @@ margin: 50px;
 
 
 .clone thead, .clone tfoot{background:transparent;}
-
-
-
-
-

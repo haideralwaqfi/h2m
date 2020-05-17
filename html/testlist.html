@@ -86,9 +86,13 @@
   </body>
 <script>
 
+$(document).ready(function () {
+    $(".table-wrap").floatingScroll();
+});
     // requires jquery library
 $(document).ready(function() {
    $(".main-table").clone(true).appendTo('#info').addClass('clone');
+   
    $('.btn-copy').on('click', function(){
       element = $(this).closest('td').next('td')[0];
       var selection = window.getSelection();        
@@ -153,6 +157,50 @@ $(document).ready(function() {
         });
     });
   });
+
+$(document).ready(function(){
+// code to read selected table row cell data (values).
+$("#test-table").on('click','.ref_low_m',function(){
+  
+     var currentRow=$(this).closest("tr"); 
+     var test_name=currentRow.find("th:eq(0)").text();
+     var data=currentRow.find("td:eq(4)").text(); 
+
+     var data = data.replace(/AGE/g, "");
+     var data = data.replace(/,/g, "\n");
+     var data = data.replace(/\(/g, "");
+     var data = data.replace(/\$S/g, "");
+     var data = data.replace(/\)/g, "");
+     var data = data.replace(/'</g, ">= ");
+     var data = data.replace(/</g, "< ");
+     var data = data.replace(/&/g, " ");
+     var data = data.replace(/SEX="M"/g, "Male");
+     var data = data.replace(/SEX="F"/g, "Female");
+     var data = data.replace(/:/g, " =");
+
+     var data = data.split(" ");
+
+for (const [key, value] of Object.entries(data)) {
+  // console.log(key, value);
+  if(value < 1){
+    parseFloat(value)
+    value1= value * 365;
+    value1= Math.round(value1);
+    if(value1 == 1){value1 = value1 + " Day"}
+    else if(value1 > 1 && value1 < 30){value1 = value1 + " Days"}
+    else if(value1 >= 30){value1 = value1/30;if(value1 == 1){value1 = value1 + " Month"}else{value1 = value1 + " Months"}}
+      
+    data[key] = value1;
+    }else if(value > 1){value1 = value + " Years"; data[key] = value1;}else if(value == 1){value1 = value + " Year"; data[key] = value1;}
+}
+    
+    var data =data.join(" ");
+     alert("Test Name: "+ test_name + "\n" +data);
+     
+     
+});
+});
+
 
 
 </script>
