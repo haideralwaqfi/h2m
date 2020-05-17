@@ -61,10 +61,10 @@
                 <tr>
                   <th class="fixed-side" scope="col">Test Name</th>
                   <th scope="col" >Sample</th>
-                  <th scope="col">Reference Law</th>
+                  <th scope="col">Reference Low</th>
                   <th scope="col">Reference High</th>
                   <th scope="col">Copy</th>
-                  <th scope="col">Reference Law in MUMPS</th>
+                  <th scope="col">Reference Low in MUMPS</th>
                   <th scope="col">Copy</th>
                   <th scope="col">Reference High in MUMPS</th>
                   <th scope="col">Critical Low</th>
@@ -86,10 +86,170 @@
   </body>
 <script>
 
+// Refe Low
+$(document).ready(function() {
+  $(".ref_low_m").each(function(i,e) {
+  	var elem = $("<span/>").append($(e).text());
+    data = elem.text();
+     var data = data.replace(/AGE/g, "");
+     var data = data.replace(/,/g, "\n");
+     var data = data.replace(/\(/g, "");
+     var data = data.replace(/\$S/g, "");
+     var data = data.replace(/\)/g, "");
+     var data = data.replace(/'</g, ">= ");
+     var data = data.replace(/</g, "< ");
+     var data = data.replace(/&/g, " ");
+     var data = data.replace(/SEX="M"/g, "Male");
+     var data = data.replace(/SEX="F"/g, "Female");
+     var data = data.replace(/:/g, " =");
+     
+     var data = data.split(" ");
+
+    for (const [key, value] of Object.entries(data)) {
+      
+      if(value < 1){
+        parseFloat(value)
+        value1= value * 365;
+        value1= Math.round(value1);
+        if(value1 == 1){value1 = value1 + " Day"}
+        else if(value1 > 1 && value1 < 30){value1 = value1 + " Days"}
+        else if(value1 >= 30){value1 = value1/30;if(value1 == 1){value1 = value1 + " Month"}else{value1 = value1 + " Months"}}
+          
+        data[key] = value1;
+        }else if(value > 1){value1 = value + " Years"; data[key] = value1;}else if(value == 1){value1 = value + " Year"; data[key] = value1;}
+    }
+    
+    var data =data.join(" ");
+  	$("table").find(".ref_low")[i].prepend(data);
+    console.log(data);
+  });
+ 
+});
+
+// Refe High
+$(document).ready(function() {
+  $(".ref_high_m").each(function(i,e) {
+  	var elem = $("<span/>").append($(e).text());
+    data = elem.text();
+     var data = data.replace(/AGE/g, "");
+     var data = data.replace(/,/g, "\n");
+     var data = data.replace(/\(/g, "");
+     var data = data.replace(/\$S/g, "");
+     var data = data.replace(/\)/g, "");
+     var data = data.replace(/'</g, ">= ");
+     var data = data.replace(/</g, "< ");
+     var data = data.replace(/&/g, " ");
+     var data = data.replace(/SEX="M"/g, "Male");
+     var data = data.replace(/SEX="F"/g, "Female");
+     var data = data.replace(/:/g, " =");
+     
+     var data = data.split(" ");
+
+    for (const [key, value] of Object.entries(data)) {
+      
+      if(value < 1){
+        parseFloat(value)
+        value1= value * 365;
+        value1= Math.round(value1);
+        if(value1 == 1){value1 = value1 + " Day"}
+        else if(value1 > 1 && value1 < 30){value1 = value1 + " Days"}
+        else if(value1 >= 30){value1 = value1/30;if(value1 == 1){value1 = value1 + " Month"}else{value1 = value1 + " Months"}}
+          
+        data[key] = value1;
+        }else if(value > 1){value1 = value + " Years"; data[key] = value1;}else if(value == 1){value1 = value + " Year"; data[key] = value1;}
+    }
+    
+    var data =data.join(" ");
+  	$("table").find(".ref_high")[i].prepend(data);
+    console.log(data);
+  });
+ 
+});
+
+// Critical Low
+$(document).ready(function() {
+  $(".critical_low_m").each(function(i,e) {
+  	var elem = $("<span/>").append($(e).text());
+    data = elem.text();
+     var data = data.replace(/AGE/g, "");
+     var data = data.replace(/,/g, "\n");
+     var data = data.replace(/\(/g, "");
+     var data = data.replace(/\$S/g, "");
+     var data = data.replace(/\)/g, "");
+     var data = data.replace(/'</g, ">= ");
+     var data = data.replace(/</g, "< ");
+     var data = data.replace(/&/g, " ");
+     var data = data.replace(/SEX="M"/g, "Male");
+     var data = data.replace(/SEX="F"/g, "Female");
+     var data = data.replace(/:/g, " =");
+     
+     var data = data.split(" ");
+
+    for (const [key, value] of Object.entries(data)) {
+      
+      if(value < 1){
+        parseFloat(value)
+        value1= value * 365;
+        value1= Math.round(value1);
+        if(value1 == 1){value1 = value1 + " Day"}
+        else if(value1 > 1 && value1 < 30){value1 = value1 + " Days"}
+        else if(value1 >= 30){value1 = value1/30;if(value1 == 1){value1 = value1 + " Month"}else{value1 = value1 + " Months"}}
+          
+        data[key] = value1;
+        }else if(value > 1){value1 = value + " Years"; data[key] = value1;}else if(value == 1){value1 = value + " Year"; data[key] = value1;}
+    }
+    
+    var data =data.join(" ");
+  	$("table").find(".critical_low")[i].prepend(data);
+    console.log(data);
+  });
+ 
+});
+
+// Critical high
+$(document).ready(function() {
+  $(".critical_high_m").each(function(i,e) {
+  	var elem = $("<span/>").append($(e).text());
+    data = elem.text();
+     var data = data.replace(/AGE/g, "");
+     var data = data.replace(/,/g, "\n");
+     var data = data.replace(/\(/g, "");
+     var data = data.replace(/\$S/g, "");
+     var data = data.replace(/\)/g, "");
+     var data = data.replace(/'</g, ">= ");
+     var data = data.replace(/</g, "< ");
+     var data = data.replace(/&/g, " ");
+     var data = data.replace(/SEX="M"/g, "Male");
+     var data = data.replace(/SEX="F"/g, "Female");
+     var data = data.replace(/:/g, " =");
+     
+     var data = data.split(" ");
+
+    for (const [key, value] of Object.entries(data)) {
+      
+      if(value < 1){
+        parseFloat(value)
+        value1= value * 365;
+        value1= Math.round(value1);
+        if(value1 == 1){value1 = value1 + " Day"}
+        else if(value1 > 1 && value1 < 30){value1 = value1 + " Days"}
+        else if(value1 >= 30){value1 = value1/30;if(value1 == 1){value1 = value1 + " Month"}else{value1 = value1 + " Months"}}
+          
+        data[key] = value1;
+        }else if(value > 1){value1 = value + " Years"; data[key] = value1;}else if(value == 1){value1 = value + " Year"; data[key] = value1;}
+    }
+    
+    var data =data.join(" ");
+  	$("table").find(".critical_high")[i].prepend(data);
+    console.log(data);
+  });
+ 
+});
+
 $(document).ready(function () {
     $(".table-wrap").floatingScroll();
+
 });
-    // requires jquery library
 $(document).ready(function() {
    $(".main-table").clone(true).appendTo('#info').addClass('clone');
    
@@ -111,9 +271,7 @@ $(document).ready(function() {
       } catch (err) {
           $('.res').html(err);
       }
-    });   
-
-    
+    });     
 });
 $(document).ready(function() {
   $('#test-table').on('click', 'tr', function() {
@@ -158,7 +316,7 @@ $(document).ready(function() {
     });
   });
 
-$(document).ready(function(){
+  $(document).ready(function(){
 // Refe Low
 $("#test-table").on('click','.ref_low_m',function(){
   

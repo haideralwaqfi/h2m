@@ -140,6 +140,7 @@ margin: 50px;
 .btn-copy, .enter {
   margin: 2px;
   width: 60px;
+  float: left;
 
 }
 
@@ -193,12 +194,21 @@ margin: 50px;
   vertical-align:top;
   background-color: yellow;
 }
-.info td {
+table td {
 	padding:5px 10px;
 	border:1px solid #000;
 	/* white-space:nowrap; */
   vertical-align:top;
+  /* white-space:pre ; */
+  
 }
+
+table td.ref_low, table td.ref_high, table td.critical_low, table td.critical_high{
+  white-space:pre ;
+}
+
+
+
 .clone {
 	position:absolute;
 	top:0;
