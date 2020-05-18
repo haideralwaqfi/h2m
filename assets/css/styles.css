@@ -166,13 +166,11 @@ margin: 50px;
 
 .info {
 	position:relative;
-	max-width:1300px;
+	/* max-width:1300px; */
 	margin:left;
 	overflow-x: hidden;
-  /* border:2px solid blue; */
   border-radius: 3px;
   left: 6px;
-  /* bottom: 6px; */
   height: 500px;
   
 }
@@ -197,14 +195,14 @@ margin: 50px;
 table td {
 	padding:5px 10px;
 	border:1px solid #000;
-	/* white-space:nowrap; */
   vertical-align:top;
-  /* white-space:pre ; */
-  
 }
 
 table td.ref_low, table td.ref_high, table td.critical_low, table td.critical_high{
-  white-space:pre ;
+  white-space: pre;
+  overflow: auto;
+  max-width: 1px;
+  font-size: 13.5px;
 }
 
 

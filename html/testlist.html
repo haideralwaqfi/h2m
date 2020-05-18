@@ -61,14 +61,14 @@
                 <tr>
                   <th class="fixed-side" scope="col">Test Name</th>
                   <th scope="col" >Sample</th>
-                  <th scope="col">Reference Low</th>
-                  <th scope="col">Reference High</th>
+                  <th scope="col">Reference Low Readable Text.</th>
+                  <th scope="col">Reference High Readable Text.</th>
                   <th scope="col">Copy</th>
                   <th scope="col">Reference Low in MUMPS</th>
                   <th scope="col">Copy</th>
                   <th scope="col">Reference High in MUMPS</th>
-                  <th scope="col">Critical Low</th>
-                  <th scope="col">Critical High</th>
+                  <th scope="col">Critical Low Readable Text.</th>
+                  <th scope="col">Critical High Readable Text.</th>
                   <th scope="col">Copy</th>
                   <th scope="col">Critical Low in MUMPS</th>
                   <th scope="col">Copy</th>
@@ -94,6 +94,7 @@ $(document).ready(function() {
     
     if(data == ""){data = "Not Available";$("table").find(".ref_low")[i].prepend(data);}else{
      var data = elem.text();
+     var data = data.replace(/ /g, "_");
      var data = data.replace(/AGE/g, "");
      var data = data.replace(/,/g, "\n");
      var data = data.replace(/\(/g, "");
@@ -116,13 +117,14 @@ $(document).ready(function() {
         value1= Math.round(value1);
         if(value1 == 1){value1 = value1 + " Day"}
         else if(value1 > 1 && value1 < 30){value1 = value1 + " Days"}
-        else if(value1 >= 30){value1 = value1/30;if(value1 == 1){value1 = value1 + " Month"}else{value1 = value1 + " Months"}}
+        else if(value1 >= 30){value1 = (value1/30).toFixed(1);if(value1 == 1){value1 = value1 + " Month"}else{value1 = value1 + " Months"}}
           
         data[key] = value1;
         }else if(value > 1){value1 = value + " Years"; data[key] = value1;}else if(value == 1){value1 = value + " Year"; data[key] = value1;}
     }
     
     var data =data.join(" ");
+    var data = data.replace(/_/g, " ");
   	$("table").find(".ref_low")[i].prepend(data);}
     
   });
@@ -137,6 +139,7 @@ $(document).ready(function() {
     
     if(data == ""){data = "Not Available";$("table").find(".ref_high")[i].prepend(data);}else{
      var data = elem.text(); 
+     var data = data.replace(/ /g, "_");
      var data = data.replace(/AGE/g, "");
      var data = data.replace(/,/g, "\n");
      var data = data.replace(/\(/g, "");
@@ -159,13 +162,14 @@ $(document).ready(function() {
         value1= Math.round(value1);
         if(value1 == 1){value1 = value1 + " Day"}
         else if(value1 > 1 && value1 < 30){value1 = value1 + " Days"}
-        else if(value1 >= 30){value1 = value1/30;if(value1 == 1){value1 = value1 + " Month"}else{value1 = value1 + " Months"}}
+        else if(value1 >= 30){value1 = (value1/30).toFixed(1);if(value1 == 1){value1 = value1 + " Month"}else{value1 = value1 + " Months"}}
           
         data[key] = value1;
         }else if(value > 1){value1 = value + " Years"; data[key] = value1;}else if(value == 1){value1 = value + " Year"; data[key] = value1;}
     }
     
     var data =data.join(" ");
+    var data = data.replace(/_/g, " ");
   	$("table").find(".ref_high")[i].prepend(data);}
     
   });
@@ -181,6 +185,7 @@ $(document).ready(function() {
     
     if(data == ""){data = "Not Available";$("table").find(".critical_low")[i].prepend(data);}else{
      var data = elem.text();
+     var data = data.replace(/ /g, "_");
      var data = data.replace(/AGE/g, "");
      var data = data.replace(/,/g, "\n");
      var data = data.replace(/\(/g, "");
@@ -203,7 +208,7 @@ $(document).ready(function() {
         value1= Math.round(value1);
         if(value1 == 1){value1 = value1 + " Day"}
         else if(value1 > 1 && value1 < 30){value1 = value1 + " Days"}
-        else if(value1 >= 30){value1 = value1/30;if(value1 == 1){value1 = value1 + " Month"}else{value1 = value1 + " Months"}}
+        else if(value1 >= 30){value1 = (value1/30).toFixed(1);if(value1 == 1){value1 = value1 + " Month"}else{value1 = value1 + " Months"}}
           
         data[key] = value1;
         }else if(value > 1){value1 = value + " Years"; data[key] = value1;}else if(value == 1){value1 = value + " Year"; data[key] = value1;}
@@ -213,7 +218,7 @@ $(document).ready(function() {
      
     
     var data =data.join(" ");
-
+    var data = data.replace(/_/g, " ");
   	$("table").find(".critical_low")[i].prepend(data);}
     
   });
@@ -228,6 +233,7 @@ $(document).ready(function() {
     
     if(data == ""){data = "Not Available";$("table").find(".critical_high")[i].prepend(data);}else{
      var data = elem.text();
+     var data = data.replace(/ /g, "_");
      var data = data.replace(/AGE/g, "");
      var data = data.replace(/,/g, "\n");
      var data = data.replace(/\(/g, "");
@@ -250,13 +256,14 @@ $(document).ready(function() {
         value1= Math.round(value1);
         if(value1 == 1){value1 = value1 + " Day"}
         else if(value1 > 1 && value1 < 30){value1 = value1 + " Days"}
-        else if(value1 >= 30){value1 = value1/30;if(value1 == 1){value1 = value1 + " Month"}else{value1 = value1 + " Months"}}
+        else if(value1 >= 30){value1 = (value1/30).toFixed(1);if(value1 == 1){value1 = value1 + " Month"}else{value1 = value1 + " Months"}}
           
         data[key] = value1;
         }else if(value > 1){value1 = value + " Years"; data[key] = value1;}else if(value == 1){value1 = value + " Year"; data[key] = value1;}
     }
     
     var data =data.join(" ");
+    var data = data.replace(/_/g, " ");
   	$("table").find(".critical_high")[i].prepend(data);}
     
   });
