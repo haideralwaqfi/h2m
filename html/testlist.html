@@ -90,7 +90,10 @@
 $(document).ready(function() {
   $(".ref_low_m").each(function(i,e) {
   	var elem = $("<span/>").append($(e).text());
-    data = elem.text();
+    var data = elem.text();
+    
+    if(data == ""){data = "Not Available";$("table").find(".ref_low")[i].prepend(data);}else{
+     var data = elem.text();
      var data = data.replace(/AGE/g, "");
      var data = data.replace(/,/g, "\n");
      var data = data.replace(/\(/g, "");
@@ -120,8 +123,8 @@ $(document).ready(function() {
     }
     
     var data =data.join(" ");
-  	$("table").find(".ref_low")[i].prepend(data);
-    console.log(data);
+  	$("table").find(".ref_low")[i].prepend(data);}
+    
   });
  
 });
@@ -130,7 +133,10 @@ $(document).ready(function() {
 $(document).ready(function() {
   $(".ref_high_m").each(function(i,e) {
   	var elem = $("<span/>").append($(e).text());
-    data = elem.text();
+    var data = elem.text();
+    
+    if(data == ""){data = "Not Available";$("table").find(".ref_high")[i].prepend(data);}else{
+     var data = elem.text(); 
      var data = data.replace(/AGE/g, "");
      var data = data.replace(/,/g, "\n");
      var data = data.replace(/\(/g, "");
@@ -160,17 +166,21 @@ $(document).ready(function() {
     }
     
     var data =data.join(" ");
-  	$("table").find(".ref_high")[i].prepend(data);
-    console.log(data);
+  	$("table").find(".ref_high")[i].prepend(data);}
+    
   });
  
 });
 
 // Critical Low
 $(document).ready(function() {
+  
   $(".critical_low_m").each(function(i,e) {
   	var elem = $("<span/>").append($(e).text());
-    data = elem.text();
+    var data = elem.text();
+    
+    if(data == ""){data = "Not Available";$("table").find(".critical_low")[i].prepend(data);}else{
+     var data = elem.text();
      var data = data.replace(/AGE/g, "");
      var data = data.replace(/,/g, "\n");
      var data = data.replace(/\(/g, "");
@@ -184,7 +194,7 @@ $(document).ready(function() {
      var data = data.replace(/:/g, " =");
      
      var data = data.split(" ");
-
+     
     for (const [key, value] of Object.entries(data)) {
       
       if(value < 1){
@@ -199,9 +209,13 @@ $(document).ready(function() {
         }else if(value > 1){value1 = value + " Years"; data[key] = value1;}else if(value == 1){value1 = value + " Year"; data[key] = value1;}
     }
     
+  
+     
+    
     var data =data.join(" ");
-  	$("table").find(".critical_low")[i].prepend(data);
-    console.log(data);
+
+  	$("table").find(".critical_low")[i].prepend(data);}
+    
   });
  
 });
@@ -210,7 +224,10 @@ $(document).ready(function() {
 $(document).ready(function() {
   $(".critical_high_m").each(function(i,e) {
   	var elem = $("<span/>").append($(e).text());
-    data = elem.text();
+    var data = elem.text();
+    
+    if(data == ""){data = "Not Available";$("table").find(".critical_high")[i].prepend(data);}else{
+     var data = elem.text();
      var data = data.replace(/AGE/g, "");
      var data = data.replace(/,/g, "\n");
      var data = data.replace(/\(/g, "");
@@ -240,8 +257,8 @@ $(document).ready(function() {
     }
     
     var data =data.join(" ");
-  	$("table").find(".critical_high")[i].prepend(data);
-    console.log(data);
+  	$("table").find(".critical_high")[i].prepend(data);}
+    
   });
  
 });
