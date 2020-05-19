@@ -166,7 +166,7 @@ margin: 50px;
 
 .info {
 	position:relative;
-	/* max-width:1300px; */
+	max-width:1300px;
 	margin:left;
 	overflow-x: hidden;
   border-radius: 3px;
